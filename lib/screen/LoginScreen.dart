@@ -1,3 +1,4 @@
+import 'package:ecom_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -36,9 +37,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     child: Text("Login"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(minimumSize: Size(150, 40)),
                     onPressed: () {
-                      print("Hello Dhrumil");
+                      Navigator.pushNamed(context, MyRoutes.homeRoutes);
                     },
                   )
                 ],

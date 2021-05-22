@@ -1,3 +1,4 @@
+import 'package:ecom_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Catalog App"),
       ),
       body: Center(child: Text("This is flutter demo")),
-      drawer: const Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }

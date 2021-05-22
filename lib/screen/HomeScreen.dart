@@ -1,4 +1,6 @@
+import 'package:ecom_app/models/catalog.dart';
 import 'package:ecom_app/widgets/drawer.dart';
+import 'package:ecom_app/widgets/item_widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,7 +11,17 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text("Catalog App"),
       ),
-      body: Center(child: Text("This is flutter demo")),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: ListView.builder(
+          itemCount: CatalogModels.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogModels.items[index],
+            );
+          },
+        ),
+      ),
       drawer: MyDrawer(),
     );
   }

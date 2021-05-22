@@ -1,6 +1,7 @@
 import 'package:ecom_app/screen/HomeScreen.dart';
 import 'package:ecom_app/screen/LoginScreen.dart';
 import 'package:ecom_app/utils/routes.dart';
+import 'package:ecom_app/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,10 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.lato().fontFamily),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      theme: MyTheame.lightTheme(context),
+      darkTheme: MyTheame.darkTheme(context),
       initialRoute: MyRoutes.homeRoutes,
       routes: {
         "/": (context) => LoginScreen(),

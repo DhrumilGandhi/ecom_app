@@ -3,7 +3,6 @@ import 'package:ecom_app/screen/LoginScreen.dart';
 import 'package:ecom_app/utils/routes.dart';
 import 'package:ecom_app/widgets/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());

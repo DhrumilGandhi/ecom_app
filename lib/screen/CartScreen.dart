@@ -10,7 +10,7 @@ class CartScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: "Cart".text.make(),
       ),
-      backgroundColor: MyTheame.creamColor,
+      backgroundColor: context.canvasColor,
     );
   }
 }

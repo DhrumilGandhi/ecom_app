@@ -13,7 +13,7 @@ class HomeDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -24,16 +24,16 @@ class HomeDetailsScreen extends StatelessWidget {
               child: "Add To Cart".text.make(),
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyTheame.darkBluishColor),
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(StadiumBorder())),
-            ).wh(100, 50)
+            ).wh(120, 50)
           ],
         ).p16(),
       ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: MyTheame.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -48,17 +48,18 @@ class HomeDetailsScreen extends StatelessWidget {
               edge: VxEdge.TOP,
               height: 30.0,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       catalog.name.text.lg
-                          .color(MyTheame.darkBluishColor)
+                          .color(context.accentColor)
                           .bold
                           .xl4
                           .make(),
                       catalog.desc.text.size(15).make(),
+                      15.heightBox,
                       "Sit et labore sed ea stet no sadipscing justo eirmod, lorem stet et amet accusam lorem rebum. Erat amet aliquyam at sit, takimata at sed voluptua sed sanctus amet labore ea, dolores sed invidunt amet magna voluptua dolores, kasd sea ipsum est sit sed rebum. Ea magna clita rebum sanctus.."
                           .text
                           .make()

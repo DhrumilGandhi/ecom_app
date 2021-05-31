@@ -1,5 +1,6 @@
 import 'package:ecom_app/utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Material(
+        color: context.canvasColor,
         child: Form(
           key: _formKey,
           child: Column(
@@ -81,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Material(
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
-                      color: Colors.deepPurple,
+                      color: context.theme.buttonColor,
                       child: InkWell(
                         onTap: () => moveToHome(context),
                         child: AnimatedContainer(

@@ -21,7 +21,7 @@ class HomeDetailsScreen extends StatelessWidget {
             "\$${catalog.price}".text.xl4.make(),
             ElevatedButton(
               onPressed: () {},
-              child: "Buy".text.make(),
+              child: "Add To Cart".text.make(),
               style: ButtonStyle(
                   backgroundColor:
                       MaterialStateProperty.all(MyTheame.darkBluishColor),
@@ -30,7 +30,9 @@ class HomeDetailsScreen extends StatelessWidget {
           ],
         ).p16(),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheame.creamColor,
       body: SafeArea(
         bottom: false,
@@ -48,16 +50,21 @@ class HomeDetailsScreen extends StatelessWidget {
               child: Container(
                 color: Colors.white,
                 width: context.screenWidth,
-                child: Column(
-                  children: [
-                    catalog.name.text.lg
-                        .color(MyTheame.darkBluishColor)
-                        .bold
-                        .xl4
-                        .make(),
-                    catalog.desc.text.size(15).make(),
-                  ],
-                ).p64(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      catalog.name.text.lg
+                          .color(MyTheame.darkBluishColor)
+                          .bold
+                          .xl4
+                          .make(),
+                      catalog.desc.text.size(15).make(),
+                      "Sit et labore sed ea stet no sadipscing justo eirmod, lorem stet et amet accusam lorem rebum. Erat amet aliquyam at sit, takimata at sed voluptua sed sanctus amet labore ea, dolores sed invidunt amet magna voluptua dolores, kasd sea ipsum est sit sed rebum. Ea magna clita rebum sanctus.."
+                          .text
+                          .make()
+                    ],
+                  ).p64(),
+                ),
               ),
             ))
           ],

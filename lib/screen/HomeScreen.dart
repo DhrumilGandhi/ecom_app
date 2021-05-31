@@ -1,6 +1,9 @@
+import 'package:ecom_app/screen/CartScreen.dart';
+import 'package:ecom_app/utils/routes.dart';
 import 'package:ecom_app/widgets/homeScreenWidgets/catalog_header.dart';
 import 'package:ecom_app/widgets/homeScreenWidgets/catalog_list.dart';
 import 'package:ecom_app/widgets/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -35,6 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheame.creamColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, MyRoutes.cartRoutes);
+          },
+          backgroundColor: MyTheame.darkBluishColor,
+          child: Icon(CupertinoIcons.cart),
+        ),
         body: SafeArea(
             child: Container(
           padding: Vx.m32,

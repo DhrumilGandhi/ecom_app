@@ -1,3 +1,4 @@
+import 'package:ecom_app/screen/CartScreen.dart';
 import 'package:ecom_app/screen/HomeScreen.dart';
 import 'package:ecom_app/screen/LoginScreen.dart';
 import 'package:ecom_app/utils/routes.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => LoginScreen(),
         MyRoutes.homeRoutes: (context) => HomeScreen(),
         MyRoutes.loginRoutes: (context) => LoginScreen(),
+        MyRoutes.cartRoutes: (context) => CartScreen(),
       },
     );
   }

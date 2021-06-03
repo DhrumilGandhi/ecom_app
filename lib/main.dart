@@ -1,5 +1,8 @@
+import 'package:ecom_app/screen/CartScreen.dart';
 import 'package:ecom_app/screen/HomeScreen.dart';
 import 'package:ecom_app/screen/LoginScreen.dart';
+import 'package:ecom_app/utils/routes.dart';
+import 'package:ecom_app/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,15 +15,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
-      theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.lato().fontFamily),
-      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.system,
+      theme: MyTheame.lightTheme(context),
+      darkTheme: MyTheame.darkTheme(context),
+      initialRoute: MyRoutes.homeRoutes,
       routes: {
         "/": (context) => LoginScreen(),
-        "/home": (context) => HomeScreen(),
-        "/login": (context) => LoginScreen(),
+        MyRoutes.homeRoutes: (context) => HomeScreen(),
+        MyRoutes.loginRoutes: (context) => LoginScreen(),
+        MyRoutes.cartRoutes: (context) => CartScreen(),
       },
     );
   }
